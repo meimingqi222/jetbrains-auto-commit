@@ -56,11 +56,3 @@ jobs:
         run: |
           ls -la build/distributions/
           gh release upload v1.0.0 build/distributions/*.zip --repo ${{ github.repository }}
-
-      - name: Upload to JetBrains Marketplace
-        run: |
-          curl -u "${{ secrets.PUBLISH_TOKEN }}:${{ secrets.PASSWORD }}" \
-               -F "file=@${{ env.PLUGIN_ZIP }}" \
-               "https://intellij-support.jetbrains.com/hub/api/my/plugins/${{ secrets.PLUGIN_ID }}/upload"
-        env:
-          PLUGIN_ZIP: build/distributions/jetbrains-auto-commit-*.zip
