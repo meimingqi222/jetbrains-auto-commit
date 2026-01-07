@@ -43,11 +43,13 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: plugin-dist
+          path: build/distributions
 
       - name: Upload to Release
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          ls -la build/distributions/
           gh release upload v1.0.0 build/distributions/*.zip --repo ${{ github.repository }}
 
       - name: Upload to JetBrains Marketplace
