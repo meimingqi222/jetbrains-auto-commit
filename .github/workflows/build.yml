@@ -19,7 +19,7 @@ jobs:
           distribution: temurin
 
       - name: Build Plugin
-        run: ./gradlew buildPlugin
+        run: chmod +x gradlew && ./gradlew buildPlugin
 
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v4
