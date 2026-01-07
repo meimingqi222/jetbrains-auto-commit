@@ -1,14 +1,15 @@
 <idea-plugin>
-    <id>com.example.aicommit</id>
+    <id>com.github.meimingqi222.aicommit</id>
     <name>AI Commit Message Generator</name>
     <vendor email="meimingqi222@gmail.com" url="https://github.com/meimingqi222/jetbrains-auto-commit">meimingqi222</vendor>
 
     <description><![CDATA[
-    使用 AI 自动生成 Git commit 消息，支持 OpenAI 兼容的 API（如 DeepSeek）。
+    <p>AI-powered Git commit message generator for JetBrains IDEs. Uses OpenAI-compatible APIs (like DeepSeek) to automatically generate meaningful commit messages based on staged changes.</p>
+    <p>Features: multi-language support, custom prompt templates, keyboard shortcuts, and seamless Git integration.</p>
     ]]></description>
 
     <change-notes><![CDATA[
-    初始版本
+    Initial release: AI commit message generation with OpenAI-compatible API support.
     ]]></change-notes>
 
     <depends>com.intellij.modules.platform</depends>
