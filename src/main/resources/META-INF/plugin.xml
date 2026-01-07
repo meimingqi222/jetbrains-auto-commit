@@ -1,0 +1,38 @@
+<idea-plugin>
+    <id>com.example.aicommit</id>
+    <name>AI Commit Message Generator</name>
+    <vendor email="meimingqi222@gmail.com" url="https://github.com/meimingqi222/jetbrains-auto-commit">meimingqi222</vendor>
+
+    <description><![CDATA[
+    使用 AI 自动生成 Git commit 消息，支持 OpenAI 兼容的 API（如 DeepSeek）。
+    ]]></description>
+
+    <change-notes><![CDATA[
+    初始版本
+    ]]></change-notes>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>Git4Idea</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- 设置页 -->
+        <projectConfigurable
+            instance="com.example.aicommit.config.AICommitConfigurable"
+            id="AICommit"
+            displayName="AI Commit Message"
+            groupId="tools"/>
+    </extensions>
+
+    <actions>
+        <!-- 手动触发动作 -->
+        <action
+            id="GenerateCommitMessage"
+            class="com.example.aicommit.action.GenerateCommitMessageAction"
+            text="Generate Commit Message with AI"
+            description="Generate commit message using AI"
+            icon="AllIcons.Actions.Execute">
+            <add-to-group group-id="Vcs.MessageActionGroup" anchor="first"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl shift M"/>
+        </action>
+    </actions>
+</idea-plugin>
